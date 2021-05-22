@@ -1,0 +1,19 @@
+[package]
+name = "gmbc"
+version = "0.0.1"
+authors = ["William Wallace <me@wiox.me>"]
+edition = "2018"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+libloading = "0.7.0"
+lazy_static = "1.4.0"
+
+[profile.release]
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = 'abort'
