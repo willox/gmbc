@@ -54,7 +54,7 @@ impl Functions {
     #[cfg(target_os = "linux")]
     unsafe fn find_library() -> Library {
         Library::new("lua_shared_srv.so")
-            .or_else(|| Library::new("lua_shared.so"))
+            .or_else(|_| Library::new("lua_shared.so"))
             .unwrap()
     }
 }
