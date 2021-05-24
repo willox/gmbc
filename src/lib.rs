@@ -4,7 +4,15 @@ unsafe extern "C" fn load_bytecode(state: lua::State) -> i32 {
     match state.get_string_data(1) {
         Some(code) => {
             if state.load(code, "loaded bytecode") != 0 {
-                return 0;
+                match state.get_string_data(-1) {
+                    None => state.push_string("fucked up"),
+                    Some(ptr) => {
+                        state.push_string_binary(ptr);
+                    }
+                }
+                return 1;
+
+
             }
 
             1
