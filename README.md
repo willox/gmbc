@@ -18,7 +18,7 @@ gmbc_load_bytecode(bytecode)()
 2) (Optional) Additional Rust toolchains for compiling 32-bit binaries:
 ```sh
 rustup target add i686-pc-windows-msvc # Windows
-rustup target i686-unknown-linux-gnu # Linux
+rustup target add i686-unknown-linux-gnu # Linux
 ```
 
 ### Windows
